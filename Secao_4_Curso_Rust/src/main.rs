@@ -1,7 +1,24 @@
 fn main() {
-    //Class 74
+    //Class 76
+    let result = mystery();
+
+
+
+}
+    //Function declaration outside of main
+    fn mystery() {
+        println!("Hellou there");
+    }
+    
+
+/*
+  //Class 74
     let result = square(5);
     println!(" The square of 5 is {result}");
+    let result = square(13);
+    println!(" The square of 13 is {result}");
+
+    
 
 }
     //Function declaration outside of main
@@ -9,7 +26,7 @@ fn main() {
      return number * number;
     }
 
-
+*/
 
 
 
