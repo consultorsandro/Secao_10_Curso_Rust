@@ -1,15 +1,25 @@
 fn main() {
-    //Class 76
+    //Class 77
+    let multiplier = 3;
+
+    let calculation = {
+        let value = 5 + 4;
+        value * multiplier
+    };
+
+    println!("The result of the calculation is {calculation}");
+
+}
+    /*
+       //Class 76
     let result = mystery();
-
-
 
 }
     //Function declaration outside of main
     fn mystery() {
         println!("Hellou there");
     }
-    
+     */
 
 /*
   //Class 74
