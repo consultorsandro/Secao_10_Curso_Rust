@@ -19,6 +19,21 @@ fn even_odd(number: i32) {
     println!("The number is {result}");
 }*/
 fn main() {
+    //Class 88
+    let number = 8;
+
+    match number {
+        /*
+         2 | 4| 6| 8 => println!("The number is even"),
+         1 | 3| 5| 7 => println!("The number is odd"),
+         _ => println!("Unknow for now"),
+        */
+        value if value % 2 == 0 => println!("The number is even"),
+        x if x % 2 != 0 => println!("The number is odd"),
+        _ => unreachable!(), // unreachable!() é uma macro que indica que o código nunca deve chegar a esse ponto   
+    }
+}
+/*
     //Class 87
     let season = "summer";
 
@@ -28,7 +43,7 @@ fn main() {
         //Undercore (_) é o mesmo que else, cobrindo todos os outros casos
         _ => println!("I don't know that season"),
     }
-}
+*/
 /*
     //Class 86
     let evaluation = false;
