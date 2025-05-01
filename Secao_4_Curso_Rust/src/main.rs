@@ -13,22 +13,33 @@ fn alphabets(text: &str) -> (bool, bool) {
 /*
 //Class 85
 fn even_odd(number: i32) {
-    
+
     // Semelhante a um if ternário
     let result = if number % 2 == 0 { "even" } else { "odd" };
     println!("The number is {result}");
 }*/
 fn main() {
-let evaluation = false;
+    //Class 87
+    let season = "summer";
 
-let value = match evaluation {
-    true => 20,
-    false => 40,
-};
-
-println!("The value is {value}");
-
+    match season {
+        "summer" => println!("Scools out!"),
+        "winter" => println!("Brr it's cold!"),
+        //Undercore (_) é o mesmo que else, cobrindo todos os outros casos
+        _ => println!("I don't know that season"),
+    }
 }
+/*
+    //Class 86
+    let evaluation = false;
+
+    let value = match evaluation {
+        true => 20,
+        false => 40,
+    };
+
+    println!("The value is {value}");
+*/
 /*
     //Class 85
     even_odd(55);
