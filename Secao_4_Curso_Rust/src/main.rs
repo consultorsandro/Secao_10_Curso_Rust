@@ -10,22 +10,57 @@ fn alphabets(text: &str) -> (bool, bool) {
     (text.contains("a"), text.contains("b"))
 }
 */
+/*
+//Class 85
+fn even_odd(number: i32) {
+    
+    // Semelhante a um if ternário
+    let result = if number % 2 == 0 { "even" } else { "odd" };
+    println!("The number is {result}");
+}*/
 fn main() {
-    //Class 83
-    let season = "summer";
+let evaluation = false;
+
+let value = match evaluation {
+    true => 20,
+    false => 40,
+};
+
+println!("The value is {value}");
+
+}
+/*
+    //Class 85
+    even_odd(55);
+    even_odd(100);
+*/
+
+/*
+    //Class 84
+    let season = "spring";
     if season == "summer" {
         println!("Scools out!");
     } else if season == "winter" {
-        println!("Brrr, it's cold!");
-    } else if season == "fall" {
-        println!("Leaves are falling!");
-    } else if season == "spring" {
-        println!("Lots of rain!");
+        println!("Brr it's cold!");
     } else {
-        println!("I don't know that season");
+        println!("Lots of rain!");
     }
+ /*
+ //Class 83
+ let season = "summer";
+ if season == "summer" {
+     println!("Scools out!");
+ } else if season == "winter" {
+     println!("Brrr, it's cold!");
+ } else if season == "fall" {
+     println!("Leaves are falling!");
+ } else if season == "spring" {
+     println!("Lots of rain!");
+ } else {
+     println!("I don't know that season");
+ }
 }
-/*
+*/
     // Class 78
     apply_to_jobs(35, "Rust Developer");
 
