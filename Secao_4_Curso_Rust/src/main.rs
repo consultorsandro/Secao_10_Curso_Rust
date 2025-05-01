@@ -19,6 +19,38 @@ fn even_odd(number: i32) {
     println!("The number is {result}");
 }*/
 fn main() {
+    //Class 90
+    let mut seconds = 21;
+
+    loop {
+        if seconds <= 0 {
+            println!("Blast off!");
+            break;
+        }
+
+        if seconds % 2 == 0 {
+            println!("{seconds} seconds (even number), skipiing 3 seconds...");
+            seconds -= 3;
+            continue;
+        }
+        println!("{seconds} seconds to blast off!");
+        seconds -= 1;
+    }
+}
+/*
+    //Class 89
+    let mut seconds = 10;
+
+    loop {
+        if seconds == 0 {
+            println!("Blast off!");
+            break;
+        }
+        println!("{seconds} to blast off!...");
+        seconds -= 1;
+    }
+*/
+/*
     //Class 88
     let number = 8;
 
@@ -30,9 +62,10 @@ fn main() {
         */
         value if value % 2 == 0 => println!("The number is even"),
         x if x % 2 != 0 => println!("The number is odd"),
-        _ => unreachable!(), // unreachable!() é uma macro que indica que o código nunca deve chegar a esse ponto   
+        _ => unreachable!(), // unreachable!() é uma macro que indica que o código nunca deve chegar a esse ponto
     }
-}
+
+*/
 /*
     //Class 87
     let season = "summer";
