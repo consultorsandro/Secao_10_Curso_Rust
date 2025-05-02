@@ -30,6 +30,7 @@ fn countdown(seconds: i32) { //Class 92
 fn main() {
     //Class 92
     countdown(5);
+    countdown(5);
 
 }
 /*
