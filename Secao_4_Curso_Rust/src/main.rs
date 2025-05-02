@@ -19,6 +19,21 @@ fn even_odd(number: i32) {
     println!("The number is {result}");
 }*/
 fn main() {
+    //Class 91
+    let mut seconds = 21;
+
+    while seconds > 0 {
+        if seconds % 2 == 0 {
+            println!("{seconds} seconds (even number), skipiing 3 seconds...");
+            seconds -= 3;
+            continue;
+        }
+        println!("{seconds} seconds to blast off!");
+        seconds -= 1;
+    }
+    println!("Blast off!");
+}
+/*
     //Class 90
     let mut seconds = 21;
 
@@ -36,9 +51,8 @@ fn main() {
         println!("{seconds} seconds to blast off!");
         seconds -= 1;
     }
-}
-/*
-    //Class 89
+*/
+/*    //Class 89
     let mut seconds = 10;
 
     loop {
