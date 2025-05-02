@@ -18,7 +18,21 @@ fn even_odd(number: i32) {
     let result = if number % 2 == 0 { "even" } else { "odd" };
     println!("The number is {result}");
 }*/
+fn countdown(seconds: i32) { //Class 92
+    if seconds == 0 {
+        println!("Blast off!");
+    } else {
+        println!("{seconds} seconds to blast off!");
+        countdown(seconds - 1); // Chamada recursiva
+    }
+}
+    
 fn main() {
+    //Class 92
+    countdown(5);
+
+}
+/*
     //Class 91
     let mut seconds = 21;
 
@@ -32,7 +46,7 @@ fn main() {
         seconds -= 1;
     }
     println!("Blast off!");
-}
+*/
 /*
     //Class 90
     let mut seconds = 21;
