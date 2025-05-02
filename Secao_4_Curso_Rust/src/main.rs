@@ -18,6 +18,7 @@ fn even_odd(number: i32) {
     let result = if number % 2 == 0 { "even" } else { "odd" };
     println!("The number is {result}");
 }*/
+/*
 fn countdown(seconds: i32) { //Class 92
     if seconds == 0 {
         println!("Blast off!");
@@ -26,13 +27,68 @@ fn countdown(seconds: i32) { //Class 92
         countdown(seconds - 1); // Chamada recursiva
     }
 }
-    
+*/
+/* //Class 97 Project 
+fn color_to_number(color: &str) -> i32 {
+    match color {
+        "red" => 1,
+        "green" => 2,
+        "blue" => 3,
+        _ => 0,
+    }
+}*/
+/* //Class 97 Project
+    if color == "red" {
+        1
+    } else if color == "green" {
+        2
+    } else if color == "blue" {
+        3
+    } else {
+        0
+    }
+}*/
+/* Class 97 Project with for loop
+fn factorial_iterative(n: i32) -> i32 {
+    let mut product = 1;
+    for i in 1..=n {
+        product *= i;
+    }
+    product
+} */
+/* Class 97 Project with while loop
+fn factorial_iterative(n: i32) -> i32 {
+    let mut product = 1;
+    let mut count = n;
+
+    while count > 0 {
+        product *= count;
+        count -= 1;
+    }
+    product
+}*/
+fn factorial_recursive(n: i32) -> i32 {
+    if n == 1 {
+    return 1;   
+}
+    n * factorial_recursive(n - 1)
+}
 fn main() {
+    /*Class 97 Project
+    println!("{}", color_to_number("red"));
+    println!("{}", color_to_number("green"));
+    println!("{}", color_to_number("blue"));
+    println!("{}", color_to_number("purple"));
+    println!("-----------------------");
+*/
+    //println!("{}", factorial_iterative(5));
+    println!("{}", factorial_recursive(5));
+}
+/*
     //Class 92
     countdown(5);
     countdown(5);
-
-}
+*/
 /*
     //Class 91
     let mut seconds = 21;
