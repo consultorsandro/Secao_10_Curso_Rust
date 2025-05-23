@@ -1,21 +1,56 @@
+#[derive(Debug)] // It is important to derive Debug for the enum
+enum PaymentMethodType {
+    Credicard(String), 
+    Debitcard(String),
+    PayPal { username: String, password: String }, 
+    Cash,
+}
+fn main() {
+    let visa = PaymentMethodType::Credicard(String::from("1234-5678-9012-3456"));
+    let paypal = PaymentMethodType::PayPal {
+        username: String::from("bob@gmail.com"),
+        password: String::from("password123"),
+    };
+    println!("{:?}", paypal);
+}
+/*
 #[derive(Debug)] // Class 168 e 169
 
+struct Credentials {
+    username: String,
+    password: String,
+}
+#[derive(Debug)] // It is important to derive Debug for the enum
 enum PaymentMethodType {
+    Credicard(String), 
+    Debitcard(String),
+    PayPal(Credentials),
+}
+fn main() {
+    let paypal_credentials = Credentials {
+        username: String::from("bob@gmail.com"),
+        password: String::from("password123"),
+    };
+
+    let paypal = PaymentMethodType::PayPal(paypal_credentials);
+    println!("{:?}", paypal);
+}
+*/
+/*
+enum PaymentMethodType { // outside of main
     Credicard(String), 
     Debitcard(String),
     PayPal(String, String),
 }
-
-
-fn main() {
-    let mut my_payment_Method = PaymentMethodType::Credicard(String::from("0034 5678 9012 3456"));
+    //fn main(){
+        let mut my_payment_Method = PaymentMethodType::Credicard(String::from("0034 5678 9012 3456"));
 
     my_payment_Method = 
     PaymentMethodType::PayPal(String::from("bob@email.com"), String::from("password"));
 
     println!("{:?}", my_payment_Method);
 }
-
+*/
 /*
 #[derive(Debug)]
 
