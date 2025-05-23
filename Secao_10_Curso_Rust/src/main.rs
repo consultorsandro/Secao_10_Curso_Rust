@@ -1,3 +1,33 @@
+#[derive(Debug)] // Class 172
+enum Beans {
+    Pinto,
+    Black,
+}
+// It is important to derive Debug for the enum
+#[derive(Debug)] 
+enum Meat {
+    Chicken,
+    Steak,
+}
+#[derive(Debug)]
+enum RestaurantItem {
+    Burrito {meat: Meat, beans: Beans},
+    Bowl {meat: Meat, beans: Beans },
+
+    VeganPlate, 
+}
+
+fn main() { // Class 172
+    let lunch = RestaurantItem::Burrito {
+        meat: Meat::Steak, 
+        beans: Beans::Pinto};
+
+    let dinner = RestaurantItem::Bowl{meat: Meat::Chicken, beans: Beans::Black};
+    let abandoned_meal = RestaurantItem::VeganPlate;
+    println!("Lunch was {:?} and dinner was {:?}", lunch, dinner);
+    println!("Nobody ate the vegan plate");
+}
+/*Class 171
 #[derive(Debug)] // It is important to derive Debug for the enum
 enum PaymentMethodType {
     Credicard(String), 
@@ -13,6 +43,7 @@ fn main() {
     };
     println!("{:?}", paypal);
 }
+*/
 /*
 #[derive(Debug)] // Class 168 e 169
 
