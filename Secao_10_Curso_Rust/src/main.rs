@@ -1,4 +1,4 @@
-enum OperatingSystem {
+enum OperatingSystem { // Class 173
     Windows,
     MacOS,
     Linux,
@@ -7,12 +7,22 @@ fn main() { // Class 173
     let my_computer = OperatingSystem::Linux;
     let age = years_since_release(my_computer);
     println!("My computer is {} years old", age);
+
+    let dads_computer = OperatingSystem::Windows; // Class 174
+    let age = years_since_release(dads_computer);
+    println!("My dad's computer is {} years old", age);
+
+
    
 }
 fn years_since_release(os: OperatingSystem) -> u32 {
     match os {
-        OperatingSystem::Windows => 37,
-        OperatingSystem::MacOS => 39,
+        OperatingSystem::Windows => {
+            println!("Quite an old operating system");
+            39
+
+        }
+        OperatingSystem::MacOS => 23,
         OperatingSystem::Linux => 31,
     }
 
