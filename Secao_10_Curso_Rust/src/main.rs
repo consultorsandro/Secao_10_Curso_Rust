@@ -1,3 +1,25 @@
+enum OperatingSystem {
+    Windows,
+    MacOS,
+    Linux,
+}
+fn main() { // Class 173
+    let my_computer = OperatingSystem::Linux;
+    let age = years_since_release(my_computer);
+    println!("My computer is {} years old", age);
+   
+}
+fn years_since_release(os: OperatingSystem) -> u32 {
+    match os {
+        OperatingSystem::Windows => 37,
+        OperatingSystem::MacOS => 39,
+        OperatingSystem::Linux => 31,
+    }
+
+}
+
+
+/*
 #[derive(Debug)] // Class 172
 enum Beans {
     Pinto,
@@ -27,6 +49,8 @@ fn main() { // Class 172
     println!("Lunch was {:?} and dinner was {:?}", lunch, dinner);
     println!("Nobody ate the vegan plate");
 }
+
+*/
 /*Class 171
 #[derive(Debug)] // It is important to derive Debug for the enum
 enum PaymentMethodType {
