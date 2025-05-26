@@ -1,6 +1,25 @@
 enum Milk {
     Lowfat(u32),
     Whole,
+    NonDairy { Kind: String }, 
+}
+
+fn main() {// Class 180
+    let my_beverage = Milk::NonDairy { 
+        Kind: String::from("Oat"), 
+    }; 
+
+    let Milk::NonDairy { Kind } = my_beverage else {
+        println!("You do not have the nondairy milk.");
+ return;
+    };
+        println!("{} milk is available here.", Kind);
+    }
+    
+/*
+enum Milk {
+    Lowfat(u32),
+    Whole,
     NonDairy { Kind: String }, // Class 179
 }
 
@@ -14,6 +33,7 @@ fn main() {
     }
         
 }
+*/
 /*
 enum Milk {
     Lowfat(u32), // Class 178
