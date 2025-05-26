@@ -1,3 +1,30 @@
+enum LaundryCycle { // Class 175
+    Cold,
+    Hot {temperature: u32}, 
+    Delicate(String),
+}
+fn main() { 
+    wash_laundry(LaundryCycle::Cold);
+    was_laundry(LaundryCycle::Hot { temperature: 100 });
+    was_laundry(LaundryCycle::Delicate(String::from("Silk")));
+}
+
+fn was_laundry(cycle: LaundryCycle) {
+    match cycle {
+        LaundryCycle::Cold => {
+            println!("Runing the laundry with cold temperature");
+        }
+        LaundryCycle::Hot { temperature } => {
+            println!("Running the laundry with hot temperature: {}°C", temperature);
+        }
+        LaundryCycle::Delicate(fabric_type) => {
+            println!("Running the laundry with delicate cycle for: {}", fabric_type);
+        }
+    }
+}
+
+
+/*
 enum OperatingSystem { // Class 173
     Windows,
     MacOS,
@@ -10,10 +37,7 @@ fn main() { // Class 173
 
     let dads_computer = OperatingSystem::Windows; // Class 174
     let age = years_since_release(dads_computer);
-    println!("My dad's computer is {} years old", age);
-
-
-   
+    println!("My dad's computer is {} years old", age);  
 }
 fn years_since_release(os: OperatingSystem) -> u32 {
     match os {
@@ -25,9 +49,7 @@ fn years_since_release(os: OperatingSystem) -> u32 {
         OperatingSystem::MacOS => 23,
         OperatingSystem::Linux => 31,
     }
-
-}
-
+*/
 
 /*
 #[derive(Debug)] // Class 172
