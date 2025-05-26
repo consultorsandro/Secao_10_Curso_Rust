@@ -1,3 +1,29 @@
+enum Milk {
+    Lowfat(u32), // Class 178
+    Whole
+}
+
+impl Milk {
+    fn drink(self) {
+        match self { //Granular match
+                println!("Delicious, 2% milk! is my favorite!");
+            }
+            Milk::Lowfat(percent) => {
+                println!("You've got lowfat {}% version.", percent);
+            }
+            Milk::Whole => {
+                println!("Whole milk is great for cooking!");
+            }
+        }
+    }
+}
+
+fn main() { 
+    Milk::Lowfat(1).drink(); // Class 178
+    Milk::Lowfat(2).drink();
+    Milk::Whole.drink();
+} 
+/*
 #[derive(Debug)] // Class 177
 
 enum OnlineOrderStatus {
@@ -23,6 +49,8 @@ impl OnlineOrderStatus { // Class 177
 fn main() { //Catching multiple enum variants
     OnlineOrderStatus::Ordered.check();
 } 
+*/
+
 /*
 enum LaundryCycle { 
     Cold,
