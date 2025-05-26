@@ -1,16 +1,38 @@
-enum LaundryCycle { // Class 175
+#[derive(Debug)] // Class 177
+
+enum OnlineOrderStatus {
+    Ordered,
+    Packed,
+    Shipped,
+    Delivered,
+}
+
+impl OnlineOrderStatus { // Class 177
+    fn check(&self) {
+        match self {
+            OnlineOrderStatus::Delivered => {
+                println!("Your order has been delivered!");
+            }
+            other_status => {
+                println!("Your order is currently: {:?}", other_status);
+            }
+        }
+    }
+}
+
+fn main() { //Catching multiple enum variants
+    OnlineOrderStatus::Ordered.check();
+} 
+/*
+enum LaundryCycle { 
     Cold,
     Hot {temperature: u32}, 
     Delicate(String),
 }
-fn main() { 
-    wash_laundry(LaundryCycle::Cold);
-    wash_laundry(LaundryCycle::Hot { temperature: 100 });
-    wash_laundry(LaundryCycle::Delicate(String::from("Silk")));
-}
-
-fn wash_laundry(cycle: LaundryCycle) {
-    match cycle {
+// Implementation block for LaundryCycle enum
+impl LaundryCycle { // Class 176
+    fn wash_laundry(&self) {
+    match self {
         LaundryCycle::Cold => {
             println!("Runing the laundry with cold temperature");
         }
@@ -23,6 +45,20 @@ fn wash_laundry(cycle: LaundryCycle) {
     }
 }
 
+}
+
+fn main() { 
+    LaundryCycle::Cold.wash_laundry(); 
+    // Using the enum variant with a value and calling the method
+    let hot_cycle = LaundryCycle::Hot { temperature: 100 };
+    hot_cycle.wash_laundry();
+
+    let delicate_cycle = LaundryCycle::Delicate(String::from("Silk"));
+    delicate_cycle.wash_laundry();
+} 
+
+
+*/
 
 /*
 enum OperatingSystem { // Class 173
