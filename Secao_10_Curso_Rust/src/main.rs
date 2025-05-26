@@ -5,11 +5,11 @@ enum LaundryCycle { // Class 175
 }
 fn main() { 
     wash_laundry(LaundryCycle::Cold);
-    was_laundry(LaundryCycle::Hot { temperature: 100 });
-    was_laundry(LaundryCycle::Delicate(String::from("Silk")));
+    wash_laundry(LaundryCycle::Hot { temperature: 100 });
+    wash_laundry(LaundryCycle::Delicate(String::from("Silk")));
 }
 
-fn was_laundry(cycle: LaundryCycle) {
+fn wash_laundry(cycle: LaundryCycle) {
     match cycle {
         LaundryCycle::Cold => {
             println!("Runing the laundry with cold temperature");
