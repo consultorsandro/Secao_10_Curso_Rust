@@ -1,4 +1,21 @@
 enum Milk {
+    Lowfat(u32),
+    Whole,
+    NonDairy { Kind: String }, // Class 179
+}
+
+fn main() {
+    let my_beverage = Milk::Whole; // Class 179
+
+    if let Milk::NonDairy { Kind } = my_beverage {
+        println!("You beveraged is {} milk.", Kind);
+    } else {
+        println!("You have a regular milk beverage.");
+    }
+        
+}
+/*
+enum Milk {
     Lowfat(u32), // Class 178
     Whole
 }
@@ -6,6 +23,7 @@ enum Milk {
 impl Milk {
     fn drink(self) {
         match self { //Granular match
+            Milk::Lowfat(2) => {
                 println!("Delicious, 2% milk! is my favorite!");
             }
             Milk::Lowfat(percent) => {
@@ -18,11 +36,12 @@ impl Milk {
     }
 }
 
-fn main() { 
+fn main() {
     Milk::Lowfat(1).drink(); // Class 178
     Milk::Lowfat(2).drink();
     Milk::Whole.drink();
-} 
+}
+*/
 /*
 #[derive(Debug)] // Class 177
 
@@ -48,13 +67,13 @@ impl OnlineOrderStatus { // Class 177
 
 fn main() { //Catching multiple enum variants
     OnlineOrderStatus::Ordered.check();
-} 
+}
 */
 
 /*
-enum LaundryCycle { 
+enum LaundryCycle {
     Cold,
-    Hot {temperature: u32}, 
+    Hot {temperature: u32},
     Delicate(String),
 }
 // Implementation block for LaundryCycle enum
@@ -75,15 +94,15 @@ impl LaundryCycle { // Class 176
 
 }
 
-fn main() { 
-    LaundryCycle::Cold.wash_laundry(); 
+fn main() {
+    LaundryCycle::Cold.wash_laundry();
     // Using the enum variant with a value and calling the method
     let hot_cycle = LaundryCycle::Hot { temperature: 100 };
     hot_cycle.wash_laundry();
 
     let delicate_cycle = LaundryCycle::Delicate(String::from("Silk"));
     delicate_cycle.wash_laundry();
-} 
+}
 
 
 */
@@ -101,7 +120,7 @@ fn main() { // Class 173
 
     let dads_computer = OperatingSystem::Windows; // Class 174
     let age = years_since_release(dads_computer);
-    println!("My dad's computer is {} years old", age);  
+    println!("My dad's computer is {} years old", age);
 }
 fn years_since_release(os: OperatingSystem) -> u32 {
     match os {
@@ -122,7 +141,7 @@ enum Beans {
     Black,
 }
 // It is important to derive Debug for the enum
-#[derive(Debug)] 
+#[derive(Debug)]
 enum Meat {
     Chicken,
     Steak,
@@ -132,12 +151,12 @@ enum RestaurantItem {
     Burrito {meat: Meat, beans: Beans},
     Bowl {meat: Meat, beans: Beans },
 
-    VeganPlate, 
+    VeganPlate,
 }
 
 fn main() { // Class 172
     let lunch = RestaurantItem::Burrito {
-        meat: Meat::Steak, 
+        meat: Meat::Steak,
         beans: Beans::Pinto};
 
     let dinner = RestaurantItem::Bowl{meat: Meat::Chicken, beans: Beans::Black};
@@ -150,9 +169,9 @@ fn main() { // Class 172
 /*Class 171
 #[derive(Debug)] // It is important to derive Debug for the enum
 enum PaymentMethodType {
-    Credicard(String), 
+    Credicard(String),
     Debitcard(String),
-    PayPal { username: String, password: String }, 
+    PayPal { username: String, password: String },
     Cash,
 }
 fn main() {
@@ -173,7 +192,7 @@ struct Credentials {
 }
 #[derive(Debug)] // It is important to derive Debug for the enum
 enum PaymentMethodType {
-    Credicard(String), 
+    Credicard(String),
     Debitcard(String),
     PayPal(Credentials),
 }
@@ -189,14 +208,14 @@ fn main() {
 */
 /*
 enum PaymentMethodType { // outside of main
-    Credicard(String), 
+    Credicard(String),
     Debitcard(String),
     PayPal(String, String),
 }
     //fn main(){
         let mut my_payment_Method = PaymentMethodType::Credicard(String::from("0034 5678 9012 3456"));
 
-    my_payment_Method = 
+    my_payment_Method =
     PaymentMethodType::PayPal(String::from("bob@email.com"), String::from("password"));
 
     println!("{:?}", my_payment_Method);
